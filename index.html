@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121885286-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-121885286-1');
+		</script>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/themes/odometer-theme-minimal.min.css" integrity="sha256-TzVR91NM2rW+l6d+XuTFNm7Q2my50dH9yJJTPYfR3bI=" crossorigin="anonymous" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
+
+		<link rel="stylesheet" href="confetti.css">
+
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.29.0/date_fns.min.js" integrity="sha256-J+IkOQfxSI1XzGtgoazVThPhunb79GLoKjW87erTCpM=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js" integrity="sha256-65R1G5irU1VT+k8L4coqgd3saSvO/Wufson/w+v2Idw=" crossorigin="anonymous"></script>
+
+		<title>Tem IMECC hoje?</title>
+
+		<style>
+			@media (prefers-color-scheme: dark) {
+				body {
+					color: #d4cfc7;
+					background-color: #191a1b;
+				}
+			}
+
+			main .yesno {
+				font-size: 520px;
+			}
+
+			@media (max-width: 1199.98px) {
+				main .yesno {
+					font-size: 420px;
+				}
+			}
+
+			@media (max-width: 991.98px) {
+				main .yesno {
+					font-size: 300px;
+				}
+			}
+
+			@media (max-width: 767.98px) {
+				main .yesno {
+					font-size: 230px;
+				}
+			}
+
+			@media (max-width: 575.98px) {
+				main .yesno {
+					font-size: min(230px, calc(45vw - 30px));
+				}
+			}
+
+			body {
+				min-height: 100vh;
+			}
+
+			main .lead {
+				font-size: min(8vw, 6vh);
+				line-height: 1;
+				margin-bottom: 0;
+			}
+
+			main .odometer {
+				margin-bottom: .75rem;
+			}
+
+			header,
+			footer {
+				padding: .5rem 0;
+			}
+
+			footer i {
+				color: #EF404D;
+			}
+		</style>
+	</head>
+	<body class="d-flex flex-column justify-content-between">
+		<!-- We keep this here only so the main content will still be properly vertically aligned -->
+		<header></header>
+
+		<main role="main" class="container text-center">
+			<h1 class="yesno d-none">Não</h1>
+			<p class="lead-no lead d-none">Estamos há <span class="odometer">0</span> <span class="days">dias</span> sem festa no IMECC.</p>
+			<p class="lead-yes lead d-none">Hoje vai rolar <b class="party-name">0</b>!</p>
+			<p class="sub-text text-small d-none">O próximo rolê será no dia <b class="next-party">0</b>.</p>
+		</main>
+
+		<footer>
+			<div class="container">
+				<div class="float-left">
+					Veja no
+					<a href="https://github.com/thigs0/hojetemimecc" target="_blank">
+						<i class="fab fa-github text-muted"></i> GitHub
+					</a>
+				</div>
+
+				<div class="float-right">
+					Made with <i class="fas fa-heart heart"></i> by <a href="https://www.linkedin.com/in/thiago-santos-612346157/" target="_blank">Phapha</a>
+				</div>
+			</div>
+		</footer>
+
+		<script>
+			let parties = [
+				{
+					name: 'Festa Junina da CEM',
+					date: '28/06/2018',
+					link: null
+				},
+				{
+					name: 'Maré Verde no IFCH',
+					date: '02/08/2018',
+					link: 'https://fb.com/events/234367033875311'
+				},
+				{
+					name: 'Ocupar com Arte, Cultura e Política',
+					date: '13/09/2019',
+					link: '/oacp.png'
+				},
+				{
+					name: 'A balbúrdia é aqui',
+					date: '18/10/2019',
+					link: '/abea.png'
+				},
+				{
+					name: 'Isso aqui vai virar o Chile!',
+					date: '24/10/2019',
+					link: 'https://www.facebook.com/groups/GrupoUnicamp/permalink/10157470262640446/'
+				},
+				{
+					name: 'A Gente Que Lute',
+					date: '22/11/2019',
+					link: 'images/agql.jpeg'
+				},
+				{
+					name: 'Ocupar e Enegrecer: Basta de Violência Policial!',
+					date: '30/06/2022',
+					link: 'images/oebvp.jpg'
+				},
+				{
+					name: '???',
+					date: '21/10/2022',
+					link: null
+				},
+				{
+					name: 'Festa no IFCH',
+					date: '03/11/2022',
+					link: null
+				},
+				{
+					name: 'o IFCH voltou! Ocupar a Universidade e as ruas pela Revogação integral da Reforma do Novo Ensino Médio',
+					date: '28/04/2023',
+					link: null
+				},
+				{
+					name: 'Festa no IFCH',
+					date: '02/06/2023',
+					link: null
+				},
+				{
+					name: 'Festa no IFCH',
+					date: '21/09/2023',
+					link: null
+				}
+			];
+
+			function confetti(n = 150) {
+				var f = document.createDocumentFragment();
+
+				for (let i = 0; i <= n; i++) {
+					var c = document.createElement('div');
+					c.className = `confetti-${i}`;
+					f.appendChild(c);
+				}
+
+				document.body.appendChild(f);
+			}
+
+			let yesNo = document.querySelector('.yesno'),
+				leadY = document.querySelector('.lead-yes'),
+				leadN = document.querySelector('.lead-no'),
+				subTx = document.querySelector('.sub-text'),
+				pName = document.querySelector('.party-name'),
+				pNext = document.querySelector('.next-party'),
+				odom  = document.querySelector('.odometer'),
+				days  = document.querySelector('.days');
+
+			let today = dateFns.endOfToday();
+
+			fParties = parties.map((v) => {
+				// I dunno but I feel like converting these here instead of
+				// just making a date object from the get go is just a bit dumb
+				v.date = dateFns.parse(v.date.split('/').reverse().join('-'));
+				return v;
+			})
+			.sort((v, vv) => dateFns.compareDesc(v.date, vv.date))
+			.filter((v) => dateFns.isBefore(v.date, today));
+
+			document.addEventListener("DOMContentLoaded", function () {
+				let theParty = fParties[0];
+
+				if (dateFns.isToday(theParty.date)) {
+					yesNo.innerText = 'SIM!';
+
+					let partyHTML = theParty.name;
+					if (theParty.link) {
+						partyHTML = `<a href="${theParty.link}" target="_blank">${partyHTML}</a>`;
+					}
+
+					pName.innerHTML = partyHTML;
+
+					leadY.classList.remove('d-none');
+
+					confetti();
+				} else {
+					yesNo.innerText = 'NÃO';
+
+					let difference = dateFns.differenceInCalendarDays(today, theParty.date);
+
+					odom.innerText = difference;
+
+					if (difference === 1) {
+						days.innerText = "dia";
+					}
+
+					leadN.classList.remove('d-none');
+
+					if (
+						dateFns.getDate(today) === dateFns.getDate(theParty.date) &&
+						dateFns.getMonth(today) === dateFns.getMonth(theParty.date))
+					{
+						confetti(25);
+					} else {
+						// confetti override
+						const params = Object.fromEntries((new URLSearchParams(window.location.search)).entries());
+						if (params.hasOwnProperty('confetti')) {
+							confetti();
+						}
+					}
+
+					if (fParties.length < parties.length) {
+						subTx.classList.remove('d-none');
+						pNext.innerHTML = dateFns.format(parties[fParties.length].date, 'DD/MM/YYYY');
+					}
+				}
+
+				yesNo.classList.remove('d-none');
+			});
+		</script>
+	</body>
+</html>
